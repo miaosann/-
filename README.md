@@ -7,8 +7,9 @@
 
 ### 2、Benchmark Evaluation
 
-> “We evaluate three different CNN models on SCUT-FBP5500 dataset for facial beauty prediction using two kinds of experimental settings, respectively. These CNNs are trained by initializing parameters with the models pretrained on ImageNet. Three different evaluation metrics are used in our experiments, including: Pearson correlation (PC), maximum absolute error (MAE), root mean square error (RMSE). More experimental details are in our paper. ” ![image](E:\MyGit\Mirror-mirror-tells-you\images/Results%20of%205-folds%20cross%20validations.png)
-> ![image](E:\MyGit\Mirror-mirror-tells-you\images/Results%20of%20the%20split%20of%2060%25%20training%20and%2040%25%20testing.png)
+> “We evaluate three different CNN models on SCUT-FBP5500 dataset for facial beauty prediction using two kinds of experimental settings, respectively. These CNNs are trained by initializing parameters with the models pretrained on ImageNet. Three different evaluation metrics are used in our experiments, including: Pearson correlation (PC), maximum absolute error (MAE), root mean square error (RMSE). More experimental details are in our paper. ”
+> ![image](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/Results%20of%205-folds%20cross%20validations.png)
+> ![image](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/Results%20of%20the%20split%20of%2060%25%20training%20and%2040%25%20testing.png)
 
 
 
@@ -103,11 +104,12 @@ def make_network():
 
 
 
-![zdy](E:\MyGit\Mirror-mirror-tells-you\images\zdy.jpg)
+![zdy](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/zdy.jpg)
 
-![wsf](E:\MyGit\Mirror-mirror-tells-you\images\wsf.jpg)
+![wsf](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/wsf.jpg)
 
 ### 5、The Web UI
 
-![UI1](E:\MyGit\Mirror-mirror-tells-you\images\UI1.png)
-![UI2](E:\MyGit\Mirror-mirror-tells-you\images\UI2.jpg)
+![UI1](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/UI1.png)
+
+![UI2](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/UI2.jpg)
