@@ -69,6 +69,10 @@ def make_network():
     return model
 ```
 
+##### 模型结构图：
+
+![ResNet50](E:\MyGit\Mirror-mirror-tells-you\images\Net.jpg)
+
 
 
 - **the second model based ResNet50**
@@ -100,13 +104,19 @@ def make_network():
     return new_model
 ```
 
+##### 模型结构图：
+
+![ResNet50](E:\MyGit\Mirror-mirror-tells-you\images\ResNet50.png)
+
+
+
 ### 4、Here are outputs
-
-
 
 ![zdy](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/zdy.jpg)
 
 ![wsf](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/wsf.jpg)
+
+
 
 ### 5、The Web UI
 
