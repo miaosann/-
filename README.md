@@ -1,5 +1,7 @@
 ##  魔镜魔镜告诉你（Mirror-mirror-tells-you）
 > **A keras-based "Face Value" scoring system!**
+>
+> 代码注释详细
 
 ### 1、Training/Testing Set
 
