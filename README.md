@@ -71,7 +71,7 @@ def make_network():
 
 ##### 模型结构图：
 
-![ResNet50](E:\MyGit\Mirror-mirror-tells-you\images\Net.jpg)
+![ResNet50](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/Net.jpg)
 
 
 
@@ -106,7 +106,7 @@ def make_network():
 
 ##### 模型结构图：
 
-![ResNet50](E:\MyGit\Mirror-mirror-tells-you\images\ResNet50.png)
+![ResNet50](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/ResNet50.png)
 
 
 
