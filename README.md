@@ -118,7 +118,9 @@ def make_network():
 
 ![wsf](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/wsf.jpg)
 
-
+> ​    在进行后台模型和Django整合阶段会出现问题：Django 初始化加载模型的过程没有问题，但是一旦调用函数使用模型时执行到 `model.predict` 就会报错`ValueError: Tensor Tensor("dense_2/Softmax:0", shape=(?, 8), dtype=float32) is not an element of this graph.`
+>
+> ​    网上大神们给出解决方案：在初始化加载模型之后，就随便生成一个向量让 `model` 执行一次 `predict` 函数，之后再使用就不会有问题了。至于原因嘛？欸，机器玄学吧！！
 
 ### 5、The Web UI
 
