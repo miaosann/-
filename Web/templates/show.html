@@ -5,15 +5,25 @@
     <title>Title</title>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/bootstrap-fileinput.css" rel="stylesheet">
+    <style>
+        html, body {
+            background-color: #303030;
+            height: 100%;
+            line-height: 0;
+        }
+        #picImg{
+            border: 5px solid #ffffff;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container text-center">
-        <h2 class="center-block" style="margin-bottom: 20px;">处理结果</h2>
-        <img id='picImg' style="max-width: 30%;max-height: 15%;" class="center-block" src="/static/result/dlrb.jpg" alt="" />
+        <h2 class="center-block" style="margin-bottom: 20px;color: #ffffff;">处理结果</h2>
+        <img id='picImg' style="max-width: 30%;max-height: 15%;" class="center-block" src="/static/result/base64.jpg" alt="" />
 
         <div class="container" style="width: 60%;">
-        <hr>
-            <table class="table">
+            <table class="table" style="color: #ffffff;border: 2px solid #ffffff;border-radius: 10px;margin-top: 50px;">
                 <thead>
                     <th class="text-center">predict</th>
                     <th class="text-center">percentage</th>

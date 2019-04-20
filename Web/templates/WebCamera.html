@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        html, body {
+            background-color: #303030;
+            height: 100%;
+            line-height: 0;
+        }
+        a, a:hover, a:active, a:focus {color: white;
+        }
+        #webcam {
+            width: auto;
+            height: auto;
+            float: left;
+            border: 5px solid #ffffff;
+            border-radius: 5px;
+        }
+        #base64image {
+            display: block;
+            width: 320px;
+            height: 240px;
+        }
+        #canvas{
+            border: 5px solid #ffffff;
+            border-radius: 5px;
+            background-image: url(/static/image/sxb.jpg);
+        }
+    </style>
+
+    <!-- 基本的jquery引用，1.5版本以上 -->
+    <script src="/static/js/jquery-1.8.3.js"></script>
+    <!-- webcam插件引用 -->
+    <script src="/static/js/jquery.webcam.js"></script>
+
+    </head>
+
+    <body>
+        {% csrf_token %}
+        <center>
+            <h2 style="color:antiquewhite;margin-top: 30px;">魔镜魔镜告诉你</h2>
+            <h5 style="color:antiquewhite;margin-bottom: 40px;"></h5style>Mirror-mirror-tells-you</h5>
+        </center>
+        <div class="container" style="width:80%;margin-left:18%;margin-right:auto;padding: 0;">
+            <div class="row"></div>>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-4">
+                    <div id="webcam"></div>
+                </div>
+
+                <div class="col-lg-4">
+                    <canvas id="canvas" width="320" height="240"></canvas>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+
+            <input id="snapBtn" type="button" class="btn btn-info btn-lg btn-block center-block" style="width:20%;margin-top:60px;font-size: 20px;" value="拍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;照" style="display:block;" />
+            <!-- <img id="base64image" src='' /> -->
+        </div>
+
+        <script type="text/javascript">
+            var Base64Code = '';
+            var pos = 0,
+                ctx = null,
+                image = [];
+            var w = 320;
+            var h = 240;
+            $(document).ready(function() {
+
+                jQuery("#webcam").webcam({
+
+                    width: 320,
+                    height: 240,
+                    mode: "callback",
+                    swffile: "/static/swf/jscam_canvas_only.swf", // 这里引入swf文件，注意路径
+                    onTick: function(remain) {},
+                    onSave: function(data) {
+
+                        var col = data.split(";");
+                        var img = image;
+
+                        for(var i = 0; i < 320; i++) {
+                            var tmp = parseInt(col[i]);
+                            img.data[pos + 0] = (tmp >> 16) & 0xff;
+                            img.data[pos + 1] = (tmp >> 8) & 0xff;
+                            img.data[pos + 2] = tmp & 0xff;
+                            img.data[pos + 3] = 0xff;
+                            pos += 4;
+                        }
+
+                        if(pos >= 4 * 320 * 240) {
+
+                            // 将图片显示到canvas中
+                            ctx.putImageData(img, 0, 0);
+                            // 取得图片的base64码
+                            var base64 = canvas.toDataURL("image/png");
+                            //将base64编码转换成python可转存图片得形式，并通过ajax传回后台
+                            Base64Code = base64.split(",")[1];
+                            // 将图片base64码设置给img
+                            var base64image = document.getElementById('base64image');
+                            base64image.setAttribute('src', base64);
+                            pos = 0;
+
+                        }
+
+                    },
+
+                    onCapture: function() {
+                        webcam.save();
+                        // Show a flash for example
+                    },
+
+                    debug: function(type, string) {
+                        console.log('type:' + type + ',string:' + string);
+                        // Write debug information to console.log() or a div
+                    },
+
+                    onLoad: function() {
+                        // Page load
+                    }
+
+                });
+                window.addEventListener("load", function() {
+
+                    var canvas = document.getElementById("canvas");
+
+                    if(canvas.getContext) {
+                        ctx = canvas.getContext("2d");
+                        ctx.clearRect(0, 0, 320, 240);
+
+                        var img = new Image();
+                        img.onload = function() {
+                            ctx.drawImage(img, 129, 89);
+                        }
+                        image = ctx.getImageData(0, 0, 320, 240);
+                    }
+
+                }, false);
+
+                $('#snapBtn').on('click', function() {
+                    webcam.capture();
+
+                    alert("拍照成功，跳转查看结果！");
+
+                    var data = {'base64':Base64Code}
+
+                    var formdata = new FormData();
+                    formdata.append("csrfmiddlewaretoken", $("[name='csrfmiddlewaretoken']").val());
+                    formdata.append("img",Base64Code);
+                    //data.append("img", $("#picID")[0].files[0]);
+                    $.ajax({
+                        url: "/WebCamera/",
+                        type: "post",
+                        data: data,
+                        success: function (data) {
+                            console.log(data);
+                            window.location.href="http://127.0.0.1:8000/show";
+                        },
+                        error: function (data) {
+                            console.log(data.status);
+                        }
+                    });
+
+                });
+            });
+
+
+        </script>
+    </body>
+</html>

@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
 from django.urls import path
 from cmdb import views
 #from cmdb.views import uploadImg # 添加
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('index/',views.index),
     path('put_ajax/', views.put_ajax),
     path('show/', views.show),
-]
+
+    path('WebCamera/', views.WebCamera),
+]+ static(settings.STATIC_URL,document_root=settings.STATICFILES_DIRS)
