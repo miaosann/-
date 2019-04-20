@@ -73,7 +73,7 @@ def make_network():
 
 ##### 模型结构图：
 
-![ResNet50](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/Net.jpg)
+![Net](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/Net.jpg)
 
 
 
@@ -125,3 +125,15 @@ def make_network():
 ![UI1](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/UI1.png)
 
 ![UI2](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/UI2.jpg)
+
+
+
+### 6、Take a photo and scoring
+
+![new1](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new1.png)
+
+![new2](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new2.jpg)
+
+![new3](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new3.png)
+
+
