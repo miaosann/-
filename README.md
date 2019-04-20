@@ -130,9 +130,9 @@ def make_network():
 
 ### 6、Take a photo and scoring
 
-![new1](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new1.png)
+![new1](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new1.jpg)
 
-![new2](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new2.jpg)
+![new2](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new2.png)
 
 ![new3](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new3.png)
 
