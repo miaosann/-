@@ -3,6 +3,8 @@
 >
 > 代码注释详细，model和数据集过大未能上传，详情邮箱联系
 
+**演示视频：**https://www.bilibili.com/video/av50221836
+
 ### 1、Training/Testing Set
 
 **训练/测试数据集：** SCUT-FBP5500、SCUT-FBP-500 【其中5500张图片只使用了AF类2000张】
