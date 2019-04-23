@@ -10,8 +10,8 @@
 ### 2、Benchmark Evaluation
 
 > “We evaluate three different CNN models on SCUT-FBP5500 dataset for facial beauty prediction using two kinds of experimental settings, respectively. These CNNs are trained by initializing parameters with the models pretrained on ImageNet. Three different evaluation metrics are used in our experiments, including: Pearson correlation (PC), maximum absolute error (MAE), root mean square error (RMSE). More experimental details are in our paper. ”
-> ![image](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/Results%20of%205-folds%20cross%20validations.png)
-> ![image](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/Results%20of%20the%20split%20of%2060%25%20training%20and%2040%25%20testing.png)
+> ![image](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/Results%20of%205-folds%20cross%20validations.png)
+> ![image](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/Results%20of%20the%20split%20of%2060%25%20training%20and%2040%25%20testing.png)
 
 
 
@@ -73,7 +73,7 @@ def make_network():
 
 ##### 模型结构图：
 
-![Net](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/Net.jpg)
+![Net](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/Net.jpg)
 
 
 
@@ -108,33 +108,33 @@ def make_network():
 
 ##### 模型结构图：
 
-![ResNet50](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/ResNet50.png)
+![ResNet50](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/ResNet50.png)
 
 
 
 ### 4、Here are outputs
 
-![zdy](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/zdy.jpg)
+![zdy](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/zdy.jpg)
 
-![wsf](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/wsf.jpg)
+![wsf](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/wsf.jpg)
 
 
 
 ### 5、The Web UI
 
-![UI1](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/UI1.png)
+![UI1](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/UI1.png)
 
-![UI2](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/UI2.jpg)
+![UI2](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/UI2.jpg)
 
 
 
 ### 6、Take a photo and scoring
 
-![new1](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new1.jpg)
+![new1](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/new1.jpg)
 
-![new2](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new2.png)
+![new2](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/new2.png)
 
-![new3](https://github.com/miaosann/Mirror-mirror-tells-you/blob/master/images/new3.png)
+![new3](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/new3.png)
 
 第四部分中界面UI为用户上传图片进行评分，但是为了进一步加强人机交互体验，所以今天我对其进行改进。使用`webcam.js`调用笔记本电脑（手机亦可）自带摄像头，对用户进行拍照，并将照片显示在右侧的`Canvas`画板中，供用户观看照片效果，然后跳转至结果界面。
 
