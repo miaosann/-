@@ -118,7 +118,9 @@ def make_network():
 
 ![wsf](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/wsf.jpg)
 
-
+> ​    在进行后台模型和Django整合阶段会出现问题：Django 初始化加载模型的过程没有问题，但是一旦调用函数使用模型时执行到 `model.predict` 就会报错`ValueError: Tensor Tensor("dense_2/Softmax:0", shape=(?, 8), dtype=float32) is not an element of this graph.`
+>
+> ​    网上大神们给出解决方案：在初始化加载模型之后，就随便生成一个向量让 `model` 执行一次 `predict` 函数，之后再使用就不会有问题了。至于原因嘛？欸，机器玄学吧！！
 
 ### 5、The Web UI
 
@@ -136,11 +138,14 @@ def make_network():
 
 ![new3](https://raw.githubusercontent.com/miaosann/Mirror-mirror-tells-you/master/images/new3.png)
 
+**虽然为美女颜值打分，但是实在是找不到女同学检测，无奈只好打开摄像头亲自上阵**
+
+
 第四部分中界面UI为用户上传图片进行评分，但是为了进一步加强人机交互体验，所以今天我对其进行改进。使用`webcam.js`调用笔记本电脑（手机亦可）自带摄像头，对用户进行拍照，并将照片显示在右侧的`Canvas`画板中，供用户观看照片效果，然后跳转至结果界面。
 
 > ​    在进行前端代码编写阶段会出现报错：webcam.capture is not a function
 >
-> ​    这是因为测试html文件必须使用http请求方式打开，不可以通过本地file://请求直接打开，所以我们使用   Python3自带的简易服务器，先打开`powershell`然年进入html文件目录，然后使用命令`python -m http.server 8888 `启动服务器。
+> ​    这是因为测试html文件必须使用http请求方式打开，不可以通过本地file://请求直接打开，所以我们使用   Python3自带的简易服务器，先打开`powershell`进入html文件目录，然后使用命令`python -m http.server 8888 `启动服务器。
 
 
 
@@ -154,9 +159,9 @@ def make_network():
 
 - **model2**
 
-  此模型是在model1觉得有所欠缺后，针对论文中提到的`ResNet50`网络而进行训练的，经过实际使用，效果明显好于model1，所以我用其给高中和大学一部分女同学进行评分，效果近似于我心中的评分。但是偶尔也会存在事与愿违，比如一个我觉得长相甜美可爱的女同学，分数过于低了，除了她以外对于大多数人效果还是不错的。
+  此模型是在model1觉得有所欠缺后，针对论文中提到的`ResNet50`网络而进行训练的，经过实际使用，效果明显好于model1，所以我用其给高中和大学一部分女同学进行评分，效果近似于我心中的评分。因此，我自己使用的模型是model2。但是偶尔也会存在事与愿违，比如一个我觉得长相甜美可爱的女同学，分数过于低了，除了她以外对于大多数人效果还是不错的。
 
-  总结该模型：`实是求是，喜欢美女，但是不放过丑女`，属于铁面无私型。
+  总结为该模型：`实是求是，喜欢美女，但是不放过丑女`，属于铁面无私型。
 
 
 
