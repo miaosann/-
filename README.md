@@ -3,7 +3,7 @@
 >
 > 代码注释详细，model和数据集过大未能上传，详情邮箱联系
 
-**演示视频：**https://www.bilibili.com/video/av50221836
+**演示视频：** https://www.bilibili.com/video/av50221836
 
 ### 1、Training/Testing Set
 
